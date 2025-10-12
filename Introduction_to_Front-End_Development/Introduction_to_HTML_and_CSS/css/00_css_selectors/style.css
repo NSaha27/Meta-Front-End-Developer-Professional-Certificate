@@ -1,0 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+h1 {
+  font-size: 2rem;
+}
+p {
+  line-height: 1.5rem;
+  color: #272727;
+}
+#blog {
+  background-color: #f7f7f7;
+}
+.container {
+  padding: 2rem 3rem;
+}
+#blog h1 {
+  color: hsl(240, 75%, 50%);
+  margin-bottom: 1rem;
+}
+#blog div h1 {
+  /* text-decoration: underline blue wavy 5px ; */
+  text-decoration: underline hsl(240, 80%, 50%) double 4px;
+}
+#blog > h1 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
