@@ -70,3 +70,57 @@ CSS styling guide book link
 ----------------------------
 https://read.amazon.com/sample/1449393195?clientId=share
 
+
+---------------------------------------------
+JAVASCRIPT
+---------------------------------------------
+
+ARRAY METHODS
+--------------
+
+ADDING AND REMOVING ARRAY ELEMENTS
+----------------------------------
+
+  Array.push(elem or list of elems) - Adds one or more elements to the end of an array and returns the new length of the array.
+
+  Array.pop() - Removes an element from the end of an array and returns it.
+
+  Array.unshift() - Adds one or more elements to the beginning of an array and returns the new length of the array.
+
+  Array.shift() - Removes an element from the beginning of an array and returns it.
+
+EXTRACTING AND ADDING A GROUP OF ELEMENTS FROM AND TO AN ARRAY
+-----------------------------------------
+
+  Array.slice(extract from, extract upto) - Extracts part of an array and returns it.
+  
+  Array.splice(extract from, no. of extraction, replace with (optional)) - Extracts part of an array and returns it, and often replaces the extracted part with one or more elements.
+
+SEARCHING FOR ELEMENTS OF AN ARRAY
+----------------------------------
+
+  Array.find(predicate) - returns the first element of the array that satisfies the predicate, otherwise returns undefined (if not found).
+
+  Array.findIndex(predicate) - returns the index of the first element that satisfies the predicate, otherwise returns -1 (if not found).
+
+  Array.indexOf() - find the index of a premitive value (first premitive value) in an array. If not found, it returns -1.
+
+  Array.lastIndexOf() - finds the index of a premitive value in an array, but searches it from the end and returns the first value it finds. If not found, it returns -1.
+
+  NOTE - In case of object premitive, both indexOf() and lastIndexOf() tries to match the exact reference of the object, otherwise it returns -1.
+
+  Array.includes() - returns true or false based on a premitive's existence in an array.
+
+  Array.some() - returns a boolean value (true or false) if atleast some of the premitives satisfies the condition written in the callback function passed in it.
+
+  Array.every() - returns a boolean value if all the premitives satisfies the condition written in the callback function passed in it.
+
+USAGE OF MAP, FILTER, AND REDUCE METHODS
+-------------------------------------------
+
+  Array.map() - Takes an array and returns a new array of the same size with transformed values.
+
+  Array.filter() - Takes an array and returns a new array with only elements passing a test.
+
+  Array.reduce() - Takes an array and combines all elements into one result (number, object, etc.)
+
