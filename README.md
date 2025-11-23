@@ -124,3 +124,53 @@ USAGE OF MAP, FILTER, AND REDUCE METHODS
 
   Array.reduce() - Takes an array and combines all elements into one result (number, object, etc.)
 
+STRING METHODS
+---------------
+
+  SEARCHING CHARACTERS IN A STRING
+  --------------------------------
+
+  String.charAt() - returns the character at a particular index of a string.
+
+  String.at() - same as charAt but can accept negetive integers as parameter.
+
+  String.indexOf() - returns the index of the first position that matches a character. If no match is found, it returns -1.
+
+  String.lastIndexOf() - returns the index of the last position that matches a character. If no match is found, it returns -1.
+
+  String.startsWith() - returns true if a string starts with a particular characters or a group of characters, otherwise, returns false.
+
+  String.endsWith() - returns true if a string ends with a particular character or a group of characters, otherwise, returns false.
+
+  String.includes() - returns true if a character or group of characters is present in a string, otherwise returns false.
+
+  MATCHING OR SEARCHING A REGEX PATTERN IN A STRING
+  ------------------------------------------
+
+  String.match(regexp) - This method of string retrieves the result of matching a string against a regular expression. This method returns an array of the matched characters. If no match is found, it returns null.
+
+  String.search(regexp) - This method searches a string for a regular expression and returns the index where the first match was found.
+
+  String.test(regexp) - This method searches for a match between a regular expression and a string. If there is any match found, it returns true, otherwise it returns false.
+
+  RegExp.exec(string) - This method performs a search with a regular expression for a match in a specified string and returns the results of matching in an array or returns null.
+
+  String.replace(searchChar, modifyWith) - replaces a part of a string with another string and returns the new string.
+
+  CHANGE CASE OF A STRING
+  -----------------------
+
+  String.toUpperCase() - changes all the letters of a string to uppercase.
+
+  String.toLowerCase() - changes all the letters of a string to lowercase.
+
+  NOTE - All other characters remain intact.
+
+  EXTRACTING PART OF A STRING OR MODIFYING PART OF A STRING
+  ----------------------------------------
+
+  String.trim() - removes the leading and trailing white spaces from a string and returns the trimmed string.
+
+  String.slice(startIndex, endIndex) - Extracts part of a string and returns it as a new string without modifying the original string.
+
+  String.split(splitAtThis) - This method splits a string into multiple sub parts at a searching pattern, puts them into an ordered list (array), and returns it.
