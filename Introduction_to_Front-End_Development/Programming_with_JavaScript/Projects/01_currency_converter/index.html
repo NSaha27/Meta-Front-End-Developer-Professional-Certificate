@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Currency Conveter</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="converter">
+        <h2 class="title">Currency Converter</h2>
+        <div class="body">
+          <table>
+            <tr>
+              <td>From :</td>
+              <td>
+                <input
+                  type="text"
+                  name="source-amount"
+                  id="source-amount"
+                  value="1"
+                />
+              </td>
+              <td>
+                <select name="unitForm" id="unit-from">
+                  <option value="USD">Doller</option>
+                  <option value="EUR">Euro</option>
+                  <option value="INR" selected>Rupee</option>
+                  <option value="CNY">Yuan</option>
+                  <option value="RUB">Rubel</option>
+                  <option value="AED">Dirham</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td colspan="2">
+                <button id="convert-btn">Convert</button>
+              </td>
+            </tr>
+            <tr>
+              <td>To :</td>
+              <td>
+                <input
+                  type="text"
+                  name="target-amount"
+                  id="target-amount"
+                  readonly
+                />
+              </td>
+              <td>
+                <select name="unitTo" id="unit-to">
+                  <option value="USD" selected>Doller</option>
+                  <option value="EUR">Euro</option>
+                  <option value="INR">Rupee</option>
+                  <option value="CNY">Yuan</option>
+                  <option value="RUB">Rubel</option>
+                  <option value="AED">Dirham</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

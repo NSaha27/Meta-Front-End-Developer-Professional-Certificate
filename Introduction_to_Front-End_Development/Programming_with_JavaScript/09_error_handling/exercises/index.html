@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Registration</title>
+  <style>
+    #displayRegForm {
+      display: block;
+    }
+    #displayLoginForm {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="displayRegForm">
+    <h1>User Registration</h1>
+    <section>
+      <div>
+        <form method="post" id="regForm">
+          <div>
+            <label for="username">Username</label> <br>
+            <input type="text" name="username" id="username">
+          </div>
+          <div>
+            <label for="firstName">First Name</label> <br>
+            <input type="text" name="firstName" id="firstName">
+          </div>
+          <div>
+            <label for="middleName">Middle Name</label> <br>
+            <input type="text" name="middleName" id="middleName">
+          </div>
+          <div>
+            <label for="lastName">Last Name</label> <br>
+            <input type="text" name="lastName" id="lastName">
+          </div>
+          <div>
+            <label for="aadhar">AADHAR</label> <br>
+            <input type="password" name="aadhar" id="aadhar">
+          </div>
+          <div>
+            <label for="address">Address</label> <br>
+            <textarea name="address" id="address" rows="10" cols="22"></textarea>
+          </div>
+          <div>
+            <label for="phone">Phone</label> <br>
+            <input type="text" name="phone" id="phone">
+          </div>
+          <div>
+            <label for="email">Email ID</label> <br>
+            <input type="email" name="email" id="email">
+          </div>
+          <div>
+            <label for="password">Password</label> <br>
+            <input type="password" name="password" id="password">
+          </div>
+          <div>
+            <button type="submit">Register</button>
+          </div>
+        </form>
+      </div>
+      <div>
+        <p>or</p>
+        <p>
+          already registered? <a href="#">login</a>
+        </p>
+      </div>
+    </section>
+    <section>
+      <a href="#" class="btn">
+        <button>Google</button>
+      </a>
+      <a href="#" class="btn">
+        <button>LinkedIn</button>
+      </a>
+      <a href="#" class="btn">
+        <button>Facebook</button>
+      </a>
+    </section>
+  </div>
+  <div id="displayLoginForm">
+    <h1>User Login</h1>
+    <section>
+      <div>
+        <form method="post" id="loginForm">
+          <div>
+            <label for="username">Username</label> <br>
+            <input type="text" name="username" id="username">
+          </div>
+          <div>
+            <label for="password">Password</label> <br>
+            <input type="password" name="password" id="password">
+          </div>
+          <div>
+            <button type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+      <div>
+        <p>or</p>
+        <p>
+          not yet registered? <a href="#">register</a>
+        </p>
+      </div>
+    </section>
+    <section>
+      <a href="#" class="btn">
+        <button>Google</button>
+      </a>
+      <a href="#" class="btn">
+        <button>LinkedIn</button>
+      </a>
+      <a href="#" class="btn">
+        <button>Facebook</button>
+      </a>
+    </section>
+  </div>
+
+  <script src="ex_03.js"></script>
+</body>
+</html>

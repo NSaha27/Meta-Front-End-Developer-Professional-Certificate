@@ -1,0 +1,7 @@
+
+Your API Key: 0e43fcbddbc7cf608e9c51dd
+
+Example Request: https://v6.exchangerate-api.com/v6/0e43fcbddbc7cf608e9c51dd/latest/USD
+
+For pair conversion:
+https://v6.exchangerate-api.com/v6/API-KEY/pair/base_currency_code/target_currency_code

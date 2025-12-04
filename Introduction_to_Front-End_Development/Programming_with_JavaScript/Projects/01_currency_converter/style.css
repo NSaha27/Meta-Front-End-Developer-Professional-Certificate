@@ -1,0 +1,58 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #222;
+}
+.container {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.converter .title {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.converter .body table tr td {
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 1rem;
+}
+.converter .body table tr td:nth-child(2),
+.converter .body table tr td:nth-child(3) {
+  width: 18vw;
+  text-align: center;
+}
+.converter .body table tr td input,
+.converter .body table tr td select {
+  width: 100%;
+  background-color: #474747;
+  border: none;
+  padding: 10px 4px;
+  color: #fff;
+  font-size: 1rem;
+}
+.converter .body table tr td button {
+  width: 80%;
+  border: none;
+  padding: 9px 0px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #ccc;
+  color: #474747;
+  transition: 0.2s;
+  cursor: pointer;
+}
+.converter .body table tr td button:hover {
+  color: #222;
+}

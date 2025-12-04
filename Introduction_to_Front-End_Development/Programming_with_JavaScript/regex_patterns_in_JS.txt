@@ -1,0 +1,31 @@
+Regexp for Usernames (having only alphabets and numbers):
+------------------------------------------
+/^[A-Za-z0-9]+$/g
+
+Regexp for Names:
+-----------------
+/^[A-Za-z]+([ '-][A-Za-z]+)*$/
+
+Regexp for First Name:
+----------------------
+/^[A-Za-z]*$/
+
+Regexp for Middle or Last Name:
+-------------------------------
+/^[A-Za-z]*$/
+
+Regexp for address:
+-------------------
+/^[a-zA-Z0-9\s,.'-]{3,}$/
+
+Regexp for Emails:
+-----------------
+/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+Regexp for mobile numbers:
+-------------------------
+/^(\+\d{1,3})?\d{10}$/
+
+Regexp for password:
+--------------------
+/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/
