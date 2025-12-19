@@ -14,6 +14,10 @@ Regexp for Middle or Last Name:
 -------------------------------
 /^[A-Za-z]*$/
 
+Regexp for Aadhaar:
+-------------------
+/^(?:\d{12}|\d{4}(?: \d{4}){2}|\d{4}(?:-\d{4}){2})$/
+
 Regexp for address:
 -------------------
 /^[a-zA-Z0-9\s,.'-]{3,}$/
@@ -29,3 +33,11 @@ Regexp for mobile numbers:
 Regexp for password:
 --------------------
 /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/
+
+Regexp for Bank Account Number (for Bank of India) of a customer:
+-----------------------------------------------------------------
+/^402310\d{9}$/
+
+Regexp for a bank account balance, where, the balance cannot be negative, can have decimal values, and must be 0 or more:
+-------------------------------------------------------------------------------------------------------------------------
+/^(?:0|[1-9]\d*)(?:\.\d+)?$/

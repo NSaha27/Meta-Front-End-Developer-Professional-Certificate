@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sec cust-reg">
+        <div class="message"></div>
+        <h2 class="title">Customer Registration</h2>
+        <div class="">
+          <form method="post" class="reg-form">
+            <div class="form-group">
+              <label for="custID" class="form-label">Customer ID</label> <br />
+              <input
+                type="text"
+                name="custID"
+                id="custID"
+                class="form-control"
+                placeholder="ex. JOHNDOE"
+              />
+            </div>
+            <div class="form-group">
+              <label for="custName" class="form-label">Name</label> <br />
+              <input
+                type="text"
+                name="custName"
+                id="custName"
+                class="form-control"
+                placeholder="ex. John Doe"
+              />
+            </div>
+            <div class="form-group">
+              <label for="custAadhaar" class="form-label">Aadhaar</label> <br />
+              <input
+                type="password"
+                name="custAadhaar"
+                id="custAadhaar"
+                class="form-control"
+                placeholder="ex. xxxx-xxxx-xxxx"
+              />
+            </div>
+            <div class="form-group">
+              <label for="custAddress" class="form-label">Address</label> <br />
+              <textarea
+                name="custAddress"
+                id="custAddress"
+                class="form-control"
+                placeholder="ex. M.G. Road, Chennai, 580427"
+                rows="10"
+                cols="22"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="custPhone" class="form-label">Phone</label> <br />
+              <input
+                type="text"
+                name="custPhone"
+                id="custPhone"
+                class="form-control"
+                placeholder="ex. +xx xxx-xxx-xxxx"
+              />
+            </div>
+            <div class="form-group">
+              <label for="custEmail" class="form-label">Email ID</label> <br />
+              <input
+                type="email"
+                name="custEmail"
+                id="custEmail"
+                class="form-control"
+                placeholder="ex. john.doe@example.com"
+              />
+            </div>
+            <div class="form-group">
+              <label for="custPsw" class="form-label">Password</label> <br />
+              <input
+                type="password"
+                name="custPsw"
+                id="custPsw"
+                class="form-control"
+                placeholder="ex. **********"
+              />
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="sec cust-login inactive">
+        <div class="message"></div>
+        <h2 class="title">Customer Log In</h2>
+        <div class="">
+          <form method="post" class="login-form">
+            <div class="form-group">
+              <label for="custID" class="form-label">Customer ID</label> <br />
+              <input
+                type="text"
+                name="custID"
+                id="custID"
+                class="form-control"
+                placeholder="ex. JOHNDOE"
+              />
+            </div>
+            <div class="form-group">
+              <label for="custPsw" class="form-label">Password</label> <br />
+              <input
+                type="password"
+                name="custPsw"
+                id="custPsw"
+                class="form-control"
+                placeholder="ex. **********"
+              />
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-success">Log in</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="sec cust-home inactive">
+        <nav>
+          <ul class="menu">
+            <li class="menu-item">
+              <a href="#" class="menu-link">Deposit money</a>
+            </li>
+            <li class="menu-item">
+              <a href="#" class="menu-link">Withdraw money</a>
+            </li>
+            <li class="menu-item">
+              <a href="#" class="menu-link">Transfer money</a>
+            </li>
+            <li class="menu-item">
+              <a href="#" class="menu-link">Check balance</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="toggle-action">
+          <div class="deposit">
+            <div class="message"></div>
+            <form method="post" class="dep-form">
+              <div class="form-group">
+                <label for="dep-amt" class="form-label"
+                  >Enter the amount (Rs.)</label
+                >
+                <br />
+                <input
+                  type="number"
+                  name="dep-amt"
+                  id="dep-amt"
+                  class="form-control"
+                  step="00.0"
+                />
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-success dep-btn">
+                  Deposit
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="withdraw inactive">
+            <div class="message"></div>
+            <form method="post" class="wdr-form">
+              <div class="form-group">
+                <label for="wdr" class="form-label"
+                  >Enter the amount (Rs.)</label
+                >
+                <br />
+                <input
+                  type="number"
+                  name="wdr"
+                  id="wdr"
+                  class="form-control"
+                  step="00.0"
+                />
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-success wdr-btn">
+                  Withdraw
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="transfer inactive">
+            <div class="message"></div>
+            <form method="post" class="trnf-form">
+              <div class="form-group">
+                <label for="destAcc" class="form-label">Account no.</label>
+                <br />
+                <input
+                  type="text"
+                  name="destAcc"
+                  id="destAcc"
+                  class="form-control"
+                />
+              </div>
+              <div class="form-group">
+                <label for="tnfr" class="form-label"
+                  >Enter the amount (Rs.)</label
+                >
+                <br />
+                <input
+                  type="number"
+                  name="trnf"
+                  id="trnf"
+                  class="form-control"
+                  step="00.0"
+                />
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-success trnf-btn">
+                  Transfer
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="check-transactions inactive"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
