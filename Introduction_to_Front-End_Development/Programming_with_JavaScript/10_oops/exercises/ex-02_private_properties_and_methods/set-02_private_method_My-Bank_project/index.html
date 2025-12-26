@@ -8,10 +8,23 @@
   </head>
   <body>
     <div class="container">
-      <div class="sec cust-reg">
-        <div class="message"></div>
+      <nav class="navbar">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link">Home</a></li>
+          <li class="nav-item"><a class="nav-link">About</a></li>
+          <li class="nav-item"><a class="nav-link">Register / Login</a></li>
+        </ul>
+      </nav>
+      <div class="sec home">
+        <h2 class="title">My Bank</h2>
+      </div>
+      <div class="sec about inactive">
+        <h2 class="title">About us</h2>
+      </div>
+      <div class="sec cust-reg inactive">
+        <div class="message inactive"></div>
         <h2 class="title">Customer Registration</h2>
-        <div class="">
+        <div class="form-section">
           <form method="post" class="reg-form">
             <div class="form-group">
               <label for="custID" class="form-label">Customer ID</label> <br />
@@ -85,32 +98,54 @@
               />
             </div>
             <div class="form-group">
+              <label for="accOpenMoney" class="form-label"
+                >Account Opening Money (Rs.)</label
+              >
+              <br />
+              <input
+                type="number"
+                name="accOpenMoney"
+                id="accOpenMoney"
+                class="form-control"
+                step="000.0"
+                placeholder="ex. 1000.0"
+              />
+            </div>
+            <div class="form-group">
               <button type="submit" class="btn btn-success">Register</button>
             </div>
           </form>
+          <div class="other-option">
+            <p>or</p>
+            <p>
+              already registered? <a href="#" class="cust-login-link">Log in</a>
+            </p>
+          </div>
         </div>
       </div>
       <div class="sec cust-login inactive">
-        <div class="message"></div>
+        <div class="message inactive"></div>
         <h2 class="title">Customer Log In</h2>
-        <div class="">
+        <div class="form-section">
           <form method="post" class="login-form">
             <div class="form-group">
-              <label for="custID" class="form-label">Customer ID</label> <br />
+              <label for="custLoginID" class="form-label">Customer ID</label>
+              <br />
               <input
                 type="text"
-                name="custID"
-                id="custID"
+                name="custLoginID"
+                id="custLoginID"
                 class="form-control"
                 placeholder="ex. JOHNDOE"
               />
             </div>
             <div class="form-group">
-              <label for="custPsw" class="form-label">Password</label> <br />
+              <label for="custLoginPsw" class="form-label">Password</label>
+              <br />
               <input
                 type="password"
-                name="custPsw"
-                id="custPsw"
+                name="custLoginPsw"
+                id="custLoginPsw"
                 class="form-control"
                 placeholder="ex. **********"
               />
@@ -119,110 +154,132 @@
               <button type="submit" class="btn btn-success">Log in</button>
             </div>
           </form>
+          <div class="other-option">
+            <p>or</p>
+            <p>
+              not yet registered? <a href="#" class="cust-reg-link">Register</a>
+            </p>
+          </div>
         </div>
       </div>
       <div class="sec cust-home inactive">
-        <nav>
-          <ul class="menu">
-            <li class="menu-item">
-              <a href="#" class="menu-link">Deposit money</a>
+        <h2 class="title">Customer Home</h2>
+        <nav class="sub-menu-section">
+          <ul class="sub-menu">
+            <li class="sub-menu-item">
+              <a href="#" class="sub-menu-link">Deposit money</a>
             </li>
-            <li class="menu-item">
-              <a href="#" class="menu-link">Withdraw money</a>
+            <li class="sub-menu-item">
+              <a href="#" class="sub-menu-link">Withdraw money</a>
             </li>
-            <li class="menu-item">
-              <a href="#" class="menu-link">Transfer money</a>
+            <li class="sub-menu-item">
+              <a href="#" class="sub-menu-link">Transfer money</a>
             </li>
-            <li class="menu-item">
-              <a href="#" class="menu-link">Check balance</a>
+            <li class="sub-menu-item">
+              <a href="#" class="sub-menu-link">Check balance</a>
             </li>
           </ul>
         </nav>
         <div class="toggle-action">
           <div class="deposit">
-            <div class="message"></div>
-            <form method="post" class="dep-form">
-              <div class="form-group">
-                <label for="dep-amt" class="form-label"
-                  >Enter the amount (Rs.)</label
-                >
-                <br />
-                <input
-                  type="number"
-                  name="dep-amt"
-                  id="dep-amt"
-                  class="form-control"
-                  step="00.0"
-                />
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-success dep-btn">
-                  Deposit
-                </button>
-              </div>
-            </form>
+            <div class="message inactive"></div>
+            <h2 class="title">Deposit</h2>
+            <div class="form-section">
+              <form method="post" class="dep-form">
+                <div class="form-group">
+                  <label for="depAmt" class="form-label"
+                    >Enter the amount (Rs.)</label
+                  >
+                  <br />
+                  <input
+                    type="number"
+                    name="depAmt"
+                    id="depAmt"
+                    class="form-control"
+                    step="000.0"
+                  />
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-success dep-btn">
+                    Deposit
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
           <div class="withdraw inactive">
-            <div class="message"></div>
-            <form method="post" class="wdr-form">
-              <div class="form-group">
-                <label for="wdr" class="form-label"
-                  >Enter the amount (Rs.)</label
-                >
-                <br />
-                <input
-                  type="number"
-                  name="wdr"
-                  id="wdr"
-                  class="form-control"
-                  step="00.0"
-                />
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-success wdr-btn">
-                  Withdraw
-                </button>
-              </div>
-            </form>
+            <div class="message inactive"></div>
+            <h2 class="title">Withdraw</h2>
+            <div class="form-section">
+              <form method="post" class="wdr-form">
+                <div class="form-group">
+                  <label for="wdrAmt" class="form-label"
+                    >Enter the amount (Rs.)</label
+                  >
+                  <br />
+                  <input
+                    type="number"
+                    name="wdrAmt"
+                    id="wdrAmt"
+                    class="form-control"
+                    step="00.0"
+                  />
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-success wdr-btn">
+                    Withdraw
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
           <div class="transfer inactive">
-            <div class="message"></div>
-            <form method="post" class="trnf-form">
-              <div class="form-group">
-                <label for="destAcc" class="form-label">Account no.</label>
-                <br />
-                <input
-                  type="text"
-                  name="destAcc"
-                  id="destAcc"
-                  class="form-control"
-                />
-              </div>
-              <div class="form-group">
-                <label for="tnfr" class="form-label"
-                  >Enter the amount (Rs.)</label
-                >
-                <br />
-                <input
-                  type="number"
-                  name="trnf"
-                  id="trnf"
-                  class="form-control"
-                  step="00.0"
-                />
-              </div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-success trnf-btn">
-                  Transfer
-                </button>
-              </div>
-            </form>
+            <div class="message inactive"></div>
+            <h2 class="title">Transfer</h2>
+            <div class="form-section">
+              <form method="post" class="trnf-form">
+                <div class="form-group">
+                  <label for="destAccNum" class="form-label"
+                    >Account no. (to which you want to transfer the
+                    money)</label
+                  >
+                  <br />
+                  <input
+                    type="text"
+                    name="destAccNum"
+                    id="destAccNum"
+                    class="form-control"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="trnfAmt" class="form-label"
+                    >Enter the amount (Rs.)</label
+                  >
+                  <br />
+                  <input
+                    type="number"
+                    name="trnfAmt"
+                    id="trnfAmt"
+                    class="form-control"
+                    step="00.0"
+                  />
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-success trnf-btn">
+                    Transfer
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
-          <div class="check-transactions inactive"></div>
+          <div class="check-transactions inactive">
+            <div class="message inactive"></div>
+            <h2 class="title">Transaction List</h2>
+          </div>
         </div>
       </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
   </body>
 </html>

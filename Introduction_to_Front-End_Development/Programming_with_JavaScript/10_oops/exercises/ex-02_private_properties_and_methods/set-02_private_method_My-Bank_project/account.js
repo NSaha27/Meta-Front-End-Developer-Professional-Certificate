@@ -1,7 +1,5 @@
 "use strict";
 
-const Customer = require("customer.js");
-
 /*
 ACCOUNT FORMAT
 --------------
@@ -18,7 +16,7 @@ ACCOUNT FORMAT
 
 const accounts = {};
 
-class Account extends Customer{
+class Account{
   static #validateAccNum(accNum){
     const regexp = /^402310\d{9}$/;
     return regexp.test(accNum);
@@ -27,25 +25,18 @@ class Account extends Customer{
     const regexp = /^(?:0|[1-9]\d*)(?:\.\d+)?$/;
     return regexp.test(amt);
   }
-  #generateAccNum(){
-    let accNo = "402310";
-    const remNum = "";
-    while(remNum.length <= 9){
-      const randNum = Math.floor(Math.random() * 9 + 1);
-      remNum += randNum;
-    }
-    return accNo.concat(remNum); 
-  }
 
-  constructor(custID, custName, custAadhaar, custAddress, custPhone, custEmail, custPsw, accOpenMoney){
-    super(custID, custName, custAadhaar, custAddress, custPhone, custEmail, custPsw);
-    this.accNum = this.#generateAccNum();
-    this.accOpenMoney = accOpenMoney
+  constructor(accNum, accOpenMoney){
+    this.accNum = accNum;
+    this.accOpenMoney = accOpenMoney;
   }
 
   // perform account initialization operation
   addInitialAcc(){
+    console.log(this.accNum, this.accOpenMoney);
     const isValidAccNum = Account.#validateAccNum(this.accNum);
+    if(isNaN(this.accOpenMoney))
+      throw new Error("*** invalid account opening money !");
     const isValidAccOpenMoney = Account.#validateAmount(this.accOpenMoney);
     if(!isValidAccNum)
       throw new Error("*** invalid account number !");
@@ -56,9 +47,6 @@ class Account extends Customer{
     if(accExists !== -1){
       throw new Error("*** account already exists !");
     }else{
-      const result = super.saveCustDetails();
-      if(typeof result !== "boolean")
-        throw result;
       Object.assign(accounts, {
         [this.accNum]: {
           transactions: [
@@ -67,14 +55,14 @@ class Account extends Customer{
           balance: this.accOpenMoney
         }
       });
-      return `*** Account was created successful, your account number is <strong>${this.accNum}</strong>`;
+      return `*** Account was created successfully, your account number is <strong>${this.accNum}</strong>`;
     }
   }
 
   // perform deposit operation
-  static deposit(accNum, amount){
+  static deposit(accNum, depAmt){
     const isValidAccNum = Account.#validateAccNum(accNum);
-    const isValidAmt = Account.#validateAmount(amount);
+    const isValidAmt = Account.#validateAmount(depAmt);
     if(!isValidAccNum)
       throw new Error("*** invalid account number !");
     if(!isValidAmt)
@@ -85,6 +73,7 @@ class Account extends Customer{
       throw new Error("*** no such account exists!");
     }else{
       const newTransactionList = [...accounts[accNum].transactions];
+      const amount = Number(depAmt);
       newTransactionList.push({dt: new Date().toLocaleDateString(), dr: 0, cr: amount});
       const newBalance = accounts[accNum].balance + amount;
       Object.assign(accounts, {
@@ -98,9 +87,9 @@ class Account extends Customer{
   }
 
   // perform withdraw operation
-  static withdraw(accNum, amount){
+  static withdraw(accNum, wdrAmt){
     const isValidAccNum = Account.#validateAccNum(accNum);
-    const isValidAmt = Account.#validateAmount(amount);
+    const isValidAmt = Account.#validateAmount(wdrAmt);
     if(!isValidAccNum)
       throw new Error("*** invalid account number !");
     if(!isValidAmt)
@@ -110,6 +99,7 @@ class Account extends Customer{
     if(accExists === -1){
       throw new Error("*** no such account exists !");
     }else{
+      const amount = Number(wdrAmt);
       if(amount > accounts[accNum].balance)
         throw new Error("*** insufficient balance to make this transaction !");
       const newTransactionList = [...accounts[accNum].transactions];
@@ -126,10 +116,10 @@ class Account extends Customer{
   }
 
   // perform money transfer operation
-  static transfer(srcAccNum, destAccNum, amount){
+  static transfer(srcAccNum, destAccNum, trnfAmt){
     const isValidSrcAccNum = Account.#validateAccNum(srcAccNum);
     const isValidDestAccNum = Account.#validateAccNum(destAccNum);
-    const isValidAmt = Account.#validateAmount(amount);
+    const isValidAmt = Account.#validateAmount(trnfAmt);
     if(!isValidSrcAccNum)
       throw new Error("*** invalid account(source) number !");
     if(!isValidDestAccNum)
@@ -145,6 +135,8 @@ class Account extends Customer{
     if(destAccExists === -1){
       throw new Error("*** no such account(destination) exists !");
     }
+
+    const amount = Number(trnfAmt);
 
     if(amount > accounts[srcAccNum].balance)
       throw new Error("*** insufficient balance to make this transaction !");
@@ -184,4 +176,4 @@ class Account extends Customer{
   }
 }
 
-module.exports = Account;
+export default Account;

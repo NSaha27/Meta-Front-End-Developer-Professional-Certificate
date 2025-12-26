@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="p-3">
+      <h2 class="h2 text-primary text-center fs-1 fw-bold">
+        Job Application and Assignment of Job Roles
+      </h2>
+    </header>
+    <main class="container bg-light p-2">
+      <div class="row">
+        <div class="col-md-6 col-12 px-3 reg">
+          <h3 class="h3 bg-info text-light text-center p-2 mb-4">
+            Application Form
+          </h3>
+          <div class="form-container pt-2">
+            <div class="alert apl-message d-none"></div>
+            <form method="post" class="apl-form">
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control border-black"
+                  name="aplName"
+                  id="formGroupExampleInput"
+                  placeholder="Enter full name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label"
+                  >Date of Birth</label
+                >
+                <input
+                  type="date"
+                  class="form-control border-black"
+                  name="aplDOB"
+                  id="formGroupExampleInput2"
+                  placeholder="dd-mm-yyyy"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput3" class="form-label"
+                  >Sex</label
+                ><br />
+                <div class="d-flex gap-4">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input border-black"
+                      type="radio"
+                      name="aplSex"
+                      id="radioDefault1"
+                      checked
+                    />
+                    <label class="form-check-label" for="radioDefault1">
+                      Male
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input border-black"
+                      type="radio"
+                      name="aplSex"
+                      id="radioDefault2"
+                    />
+                    <label class="form-check-label" for="radioDefault2">
+                      Female
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input border-black"
+                      type="radio"
+                      name="aplSex"
+                      id="radioDefault3"
+                    />
+                    <label class="form-check-label" for="radioDefault3">
+                      Other
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput4" class="form-label"
+                  >Degree</label
+                ><br />
+                <select
+                  class="form-select border-black"
+                  aria-label="Default select example"
+                  name="aplDegree"
+                  id="formGroupExampleInput4"
+                >
+                  <option selected>Open this select menu</option>
+                  <option value="bcom">B.Com</option>
+                  <option value="mcom">M.Com</option>
+                  <option value="btech">B.Tech</option>
+                  <option value="mtech">M.Tech</option>
+                  <option value="bca">BCA</option>
+                  <option value="mca">MCA</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput5" class="form-label"
+                  >Address</label
+                >
+                <textarea
+                  name="aplAddress"
+                  id="formGroupExampleInput5"
+                  class="form-control border-black"
+                  placeholder="Enter full address"
+                  rows="7"
+                ></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput6" class="form-label"
+                  >Phone</label
+                >
+                <input
+                  type="text"
+                  class="form-control border-black"
+                  name="aplPhone"
+                  id="formGroupExampleInput6"
+                  placeholder="Enter phone number"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput7" class="form-label"
+                  >Email ID</label
+                >
+                <input
+                  type="email"
+                  class="form-control border-black"
+                  name="aplEmail"
+                  id="formGroupExampleInput7"
+                  placeholder="Enter email ID"
+                />
+              </div>
+              <div class="mb-4">
+                <label for="formGroupExampleInput8" class="form-label"
+                  >Select a prefered role
+                </label>
+                <select
+                  class="form-select border-black"
+                  aria-label="Default select example"
+                  name="aplPreferedRole"
+                  id="formGroupExampleInput8"
+                >
+                  <option selected>Open this select menu</option>
+                  <option value="accountant">Accountant</option>
+                  <option value="manager">Manager</option>
+                  <option value="auditor">Auditor</option>
+                  <option value="developer">Developer</option>
+                  <option value="aiEngineer">AI Engineer</option>
+                  <option value="cloudEngineer">Cloud Engineer</option>
+                  <option value="tester">Tester</option>
+                </select>
+              </div>
+              <div class="mb-3 d-flex flex-wrap py-3">
+                <button type="submit" class="btn btn-primary mx-auto w-100">
+                  Apply
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-6 col-12 px-3 role-dist">
+          <h3 class="h3 bg-info text-light text-center p-2 mb-4">
+            Jobs Available
+          </h3>
+          <div class="d-flex flex-column flex-wrap pt-2">
+            <div class="alert job-message d-none"></div>
+            <button class="btn btn-primary w-50 mx-auto check disabled">
+              Check
+            </button>
+            <div class="p-3 d-flex disp-job-list"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

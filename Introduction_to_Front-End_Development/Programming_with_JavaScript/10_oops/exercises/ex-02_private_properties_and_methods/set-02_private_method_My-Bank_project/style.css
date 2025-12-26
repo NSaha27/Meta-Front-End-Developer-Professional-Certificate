@@ -7,10 +7,10 @@
 
 .container {
   width: 100%;
-  min-height: 100vh;
+  min-height: 84vh;
 }
 .sec {
-  min-height: 100%;
+  min-height: inherit;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -22,9 +22,151 @@
 }
 .title {
   text-align: center;
-  font-size: 2.3rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
   font-weight: 800;
   letter-spacing: 1px;
   text-transform: capitalize;
   color: #006666;
+}
+.message {
+  width: 60%;
+  padding: 0.8rem 0.2rem;
+  margin: 0 auto 2rem;
+  background-color: #006666;
+  color: #eee;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.8rem;
+  text-align: center;
+}
+
+/* NAVBAR */
+.navbar {
+  padding: 1rem 0rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #006666;
+}
+.navbar .navbar-nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.navbar .navbar-nav .nav-item {
+  float: left;
+}
+.navbar .navbar-nav .nav-item .nav-link {
+  text-decoration: none;
+  text-transform: capitalize;
+  display: block;
+  padding: 1rem 3.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: 3px solid #006666;
+  color: #eee;
+  transition: 0.2s;
+}
+.navbar .navbar-nav .nav-item .nav-link:hover {
+  border: 3px solid #eee;
+}
+
+/* FORM SECTION */
+
+.form-section {
+  width: 60%;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 3px solid #006666;
+  border-radius: 1rem;
+}
+.form-section form .form-group {
+  margin-bottom: 1.2rem;
+}
+.form-section form .form-group .form-label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #006666;
+}
+.form-section form .form-group .form-control {
+  width: 100%;
+  padding: 10px 5px;
+  margin-top: 0.4rem;
+  font-size: 1rem;
+  border: 2px solid #006666;
+  border-radius: 0.6rem;
+}
+.form-section form .form-group .btn {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 0.8rem;
+  border-radius: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.form-section form .form-group .btn-success {
+  border: 2px solid #006666;
+  background-color: #006666;
+  color: #eee;
+}
+.form-section form .form-group .btn:hover {
+  border: 2px solid #003f3f;
+  background-color: #003f3f;
+}
+.form-section .other-option {
+  width: 100%;
+  padding-top: 0.3rem;
+}
+.form-section .other-option p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+/* CUSTOMER HOME MENUS */
+
+.cust-home .sub-menu-section {
+  padding: 1rem 0rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cust-home .sub-menu-section .sub-menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.cust-home .sub-menu-section .sub-menu .sub-menu-item {
+  float: left;
+}
+.cust-home .sub-menu-section .sub-menu .sub-menu-item .sub-menu-link {
+  text-decoration: none;
+  display: block;
+  text-transform: capitalize;
+  padding: 0.8rem 3.2rem;
+  margin: 0 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: 3px solid #006666;
+  color: #006666;
+  transition: 0.2s;
+}
+.cust-home .sub-menu-section .sub-menu .sub-menu-item .sub-menu-link:hover {
+  background-color: #006666;
+  color: #eee;
+}
+.cust-home .toggle-action {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
 }

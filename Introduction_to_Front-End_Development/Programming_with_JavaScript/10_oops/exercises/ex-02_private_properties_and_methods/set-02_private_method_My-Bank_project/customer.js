@@ -42,8 +42,22 @@ class Customer {
     const regexp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
     return regexp.test(psw);
   }
+  #validateAmount(amt){
+    const regexp = /^(?:0|[1-9]\d*)(?:\.\d+)?$/;
+    return regexp.test(amt);
+  }
+  // the following function will generate an account number for a customer
+  #generateAccNum(){
+    let accNo = "402310";
+    let remNum = "";
+    while(remNum.length < 9){
+      const randNum = Math.floor(Math.random() * 9 + 1);
+      remNum += randNum;
+    }
+    return accNo.concat(remNum); 
+  }
 
-  constructor(custID, custName, custAadhaar, custAddress, custPhone, custEmail, custPsw){
+  constructor(custID, custName, custAadhaar, custAddress, custPhone, custEmail, custPsw, accOpenMoney){
     this.#custID = this.#validateCustID(custID) ? custID : "";
     this.#custName = this.#validateCustName(custName) ? custName : "";
     this.#custAadhaar = this.#validateCustAadhaar(custAadhaar) ? custAadhaar : "";
@@ -51,8 +65,12 @@ class Customer {
     this.#custPhone = this.#validateCustPhone(custPhone) ? custPhone : "";
     this.#custEmail = this.#validateCustEmail(custEmail) ? custEmail : "";
     this.#custPsw = this.#validateCustPassword(custPsw) ? custPsw : "";
+    this.accOpenMoney = this.#validateAmount(accOpenMoney) ? Number(accOpenMoney) : 0;
   }
+
   saveCustDetails(){
+    if(this.accOpenMoney === 0)
+      throw new Error("*** invalid account opening money !");
     if(this.#custID.length === 0)
       throw new Error("*** invalid customer ID!");
     if(this.#custName.length === 0)
@@ -68,25 +86,27 @@ class Customer {
     if(this.#custPsw.length === 0)
       throw new Error("*** invalid password!");
 
-
     const data = {
       ID: this.#custID,
+      accNum: this.#generateAccNum(),
       name: this.#custName,
       aadhaar: this.#custAadhaar,
       address: this.#custAddress,
       phone: this.#custPhone,
       email: this.#custEmail,
-      password: this.#custPsw
+      password: this.#custPsw,
+      accOpenMoney: this.accOpenMoney
     };
 
     // if there is no error, try to save the data
     customers.push(data);
-    return true;
+    return {accNum: data.accNum, accOpenMoney: data.accOpenMoney};
   }
+
   static fetchCustDetails(custID, custPsw){
     const custIDRegexp = /^[A-Za-z0-9]+$/g;
     const custPswRegexp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
-    if(!custIDRegexp(custID) || !custPswRegexp(custPsw)){
+    if(!custIDRegexp.test(custID) || !custPswRegexp.test(custPsw)){
       return {};
     }
     const fetchedCust = customers.find((cust, indx, arr) => cust.ID === custID && cust.password === custPsw);
@@ -94,4 +114,4 @@ class Customer {
   }
 }
 
-module.exports = Customer;
+export default Customer;
